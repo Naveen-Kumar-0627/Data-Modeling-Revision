@@ -59,8 +59,37 @@
     - in snow flake schema data are normalized,avoids reduandcy of data ,but for query we need do lot of joins,so its decreases query performance
    ## Star Schema example 
 
-     ![Star schema](images.png)    
+     ![star schema](images.png)    
 
    ## Snow flake example 
-       ![Snow flake ](image.png) 
-       
+       ![Snow flake ](image.png)
+# Types of Fact tables
+   1. Transactional fact table 
+     - each row represents one independent transaction
+   2. Periodic fact table 
+     - each row represents a period
+     - aggregated on week,month,year,day.
+   3. Accumulating fact table 
+     - Tracks life cycle
+     ** exampe **
+     - order shipped,deliverd
+     - loan applications process  (timestamp)
+   4. Fact less fact table
+      - No measurements,only key
+   5. Aggregated fact table
+     ** example **
+      - sales by month
+      - sales by region           
+# Types of Dimentional table
+   1. Conformed Dimensions
+     - shared across multiple fact tables
+   2. Degenerate dimensions
+     - a dimension column inside the fact table
+       ** example **
+         - sometimes we will not have many columns to create seperate dim table 
+   3. Junk Dimensions 
+     - combines all small unused attributes(flag,indicators)
+   4. Role playing dimension  
+    - same dimension table used for diffrent roles 
+    ** exampe **
+     - same dim_date table used as ship_date,order_date,delivery_date         
